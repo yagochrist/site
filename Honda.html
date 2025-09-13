@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honda Cars - Apresentação</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #111827;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      width: 100%;
+      padding: 15px 30px;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 20;
+    }
+
+    .logo-img {
+      height: 40px;
+    }
+
+    .login-btn {
+      padding: 8px 20px;
+      border: 1px solid #fff;
+      background: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .login-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    main {
+      margin-top: 80px;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(to bottom, #000, #111827);
+      padding: 20px;
+    }
+
+    .swiper-slide img {
+      width: auto;
+      height: 60vh;
+      max-width: 90%;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+      object-fit: contain;
+    }
+
+    .car-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #f3f3f3;
+    }
+
+    .action-buttons button {
+      margin: 5px;
+      padding: 12px 25px;
+      border: 1px solid #fff;
+      background: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      font-weight: 600;
+    }
+
+    .action-buttons button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .swiper-pagination-bullet {
+      background: #fff;
+      opacity: 0.7;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #f00;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="image%204.png" alt="Logo Honda" class="logo-img">
+    <!-- Redireciona para index.html -->
+    <button class="login-btn" onclick="window.location.href='index.html'">Login</button>
+  </header>
+
+  <main>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Slide Inicial -->
+        <div class="swiper-slide">
+          <img src="image%204.png" alt="Logo Honda">
+          <h2 class="car-title">Bem-vindo à Honda</h2>
+          <div class="action-buttons">
+            <button>Saiba Mais</button>
+            <button>Agendar Test Drive</button>
+          </div>
+        </div>
+
+        <!-- Honda Civic -->
+        <div class="swiper-slide">
+          <img src="image%205.png" alt="Honda Civic">
+          <h2 class="car-title">Honda Civic</h2>
+          <div class="action-buttons">
+            <button>Saiba Mais</button>
+            <button>Agendar Test Drive</button>
+          </div>
+        </div>
+
+        <!-- Honda HR-V -->
+        <div class="swiper-slide">
+          <img src="image%206.png" alt="Honda HR-V">
+          <h2 class="car-title">Honda HR-V</h2>
+          <div class="action-buttons">
+            <button>Saiba Mais</button>
+            <button>Agendar Test Drive</button>
+          </div>
+        </div>
+
+        <!-- Honda City -->
+        <div class="swiper-slide">
+          <img src="image%208.png" alt="Honda City">
+          <h2 class="car-title">Honda City</h2>
+          <div class="action-buttons">
+            <button>Saiba Mais</button>
+            <button>Agendar Test Drive</button>
+          </div>
+        </div>
+
+        <!-- Honda Accord -->
+        <div class="swiper-slide">
+          <img src="image%2011.png" alt="Honda Accord">
+          <h2 class="car-title">Honda Accord</h2>
+          <div class="action-buttons">
+            <button>Saiba Mais</button>
+            <button>Agendar Test Drive</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    var swiper = new Swiper(".swiper", {
+      direction: "vertical",
+      slidesPerView: 1,
+      spaceBetween: 50,
+      mousewheel: true,
+      effect: "fade",
+      speed: 1500,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+    gsap.from(".swiper-slide img", { scale: 0.8, opacity: 0, duration: 1, stagger: 0.5 });
+    gsap.from(".car-title", { y: 50, opacity: 0, duration: 1, delay: 0.5, stagger: 0.5 });
+    gsap.from(".action-buttons button", { y: 30, opacity: 0, duration: 0.8, delay: 1, stagger: 0.3 });
+  </script>
+</body>
+</html>
